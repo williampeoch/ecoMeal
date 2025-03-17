@@ -1,3 +1,4 @@
+import math
 from functools import partial
 from typing import List, Callable, Tuple
 from random import choices, randint, randrange, random
@@ -10,23 +11,44 @@ PopulateFunc = Callable[[], Population]
 SelectionFunc = Callable[[Population, FitnessFunc], Tuple[Genome, Genome]]
 CrossoverFunc = Callable[[Genome, Genome], Tuple[Genome, Genome]]
 MutationFunc = Callable[[Genome], Genome]
-Thing = namedtuple('Thing', ['name', 'value', 'weight'])
+Aliment = namedtuple('Aliment', ['name', 'kcal', 'prot', 'fat', 'carb'])
 
-things = [
-    Thing('Laptop', 500, 1200),
-    Thing('Headphones', 150, 160),
-    Thing('Coffee Mug', 60, 350),
-    Thing('Notepad', 40, 333),
-    Thing('Water Bottle', 30, 192),
+aliments = [
+    # Onions & Leeks (valeurs pour 1000g : 370 kcal, 7g prot, 1g fat, 83.3g carb)
+    Aliment("Onions & Leeks 5g",   1.85,  0.035, 0.005,  0.4165),
+    Aliment("Onions & Leeks 10g",  3.7,   0.07,  0.01,   0.833),
+    Aliment("Onions & Leeks 50g",  18.5,  0.35,  0.05,   4.165),
+    Aliment("Onions & Leeks 100g", 37.0,  0.7,   0.1,    8.33),
+    Aliment("Onions & Leeks 250g", 92.5,  1.75,  0.25,   20.825),
+
+    # Bananas (valeurs pour 1000g : 600 kcal, 7g prot, 3g fat, 136.4g carb)
+    Aliment("Bananas 5g",   3.0,  0.035, 0.015,  0.682),
+    Aliment("Bananas 10g",  6.0,  0.07,  0.03,   1.364),
+    Aliment("Bananas 50g",  30.0,  0.35,  0.15,   6.82),
+    Aliment("Bananas 100g", 60.0,  0.7,   0.3,    13.64),
+    Aliment("Bananas 250g", 150.0, 1.75,  0.75,   34.1),
+
+    # Citrus Fruit (valeurs pour 1000g : 260 kcal, 5g prot, 2g fat, 55.6g carb)
+    Aliment("Citrus Fruit 5g",   1.3,  0.025, 0.01,  0.278),
+    Aliment("Citrus Fruit 10g",  2.6,  0.05,  0.02,  0.556),
+    Aliment("Citrus Fruit 50g",  13.0, 0.25,  0.1,   2.78),
+    Aliment("Citrus Fruit 100g", 26.0, 0.5,   0.2,   5.56),
+    Aliment("Citrus Fruit 250g", 65.0, 1.25,  0.5,   13.9),
+
+    # Tomatoes (valeurs pour 1000g : 170 kcal, 8g prot, 2g fat, 30.1g carb)
+    Aliment("Tomatoes 5g",   0.85, 0.04,  0.01,   0.1505),
+    Aliment("Tomatoes 10g",  1.7,  0.08,  0.02,   0.301),
+    Aliment("Tomatoes 50g",  8.5,  0.4,   0.1,    1.505),
+    Aliment("Tomatoes 100g", 17.0, 0.8,   0.2,    3.01),
+    Aliment("Tomatoes 250g", 42.5, 2.0,   0.5,    7.525),
+
+    # Root Vegetables (valeurs pour 1000g : 380 kcal, 9g prot, 2g fat, 81.6g carb)
+    Aliment("Root Vegetables 5g",   1.9,  0.045, 0.01,  0.408),
+    Aliment("Root Vegetables 10g",  3.8,  0.09,  0.02,  0.816),
+    Aliment("Root Vegetables 50g",  19.0, 0.45,  0.1,   4.08),
+    Aliment("Root Vegetables 100g", 38.0, 0.9,   0.2,   8.16),
+    Aliment("Root Vegetables 250g", 95.0, 2.25,  0.5,   20.4),
 ]
-
-more_things = [
-    Thing('Mints', 5, 25),
-    Thing('Socks', 10, 38),
-    Thing('Tissues', 15, 80),
-    Thing('Phone', 500, 200),
-    Thing('Baseball Cap', 100, 70),
-] + things
 
 def generate_genome(length: int) -> Genome:
     return choices([0, 1], k=length)
@@ -34,24 +56,34 @@ def generate_genome(length: int) -> Genome:
 def generate_population(size: int, genome_length: int) -> Population:
     return [generate_genome(genome_length) for _ in range(size)]
 
-def fitness(genome: Genome, things: [Thing], weight_limit: int) -> int:
-    if len(genome) != len(things):
-        raise ValueError("genome and things must be of the same length")
-    
-    weight = 0
-    value = 0
+def gaussian(x, mu, sigma):
+    return math.exp(-((x - mu)**2) / (2 * sigma ** 2))
 
-    for i, thing in enumerate(things):
+def fitness(genome: Genome, aliments: [Aliment]) -> int:
+    if len(genome) != len(aliments):
+        raise ValueError("genome and aliments must be of the same length")
+    
+    prot = 0
+    fat = 0
+    carb = 0
+    kcal = 0
+
+    for i, aliment in enumerate(aliments):
         if genome[i] == 1:
-            weight += thing.weight
-            value += thing.value
+            prot += aliment.prot
+            fat += aliment.fat
+            carb += aliment.carb
+            kcal += aliment.kcal
 
-        if weight > weight_limit:
-            return 0
+    kcal_fitness = gaussian(kcal, 800, 50)
+    prot_fitness = gaussian(kcal, 25, 5)
+    fat_fitness = gaussian(kcal, 30, 5)
+    carb_fitness = gaussian(kcal, 100, 10)
     
-    return value
+    return (kcal_fitness + prot_fitness + fat_fitness + carb_fitness) / 4
 
 def selection_pair(population: Population, fitness_func: FitnessFunc) -> Population:
+    print(sum([fitness_func(genome) for genome in population]))
     return choices(
         population=population,
         weights=[fitness_func(genome) for genome in population],
@@ -119,23 +151,23 @@ def run_evolution(
 
 population, generations = run_evolution(
     populate_func=partial(
-        generate_population, size=10, genome_length=len(things)
+        generate_population, size=10, genome_length=len(aliments)
     ),
     fitness_func=partial(
-        fitness, things=things, weight_limit=3000
+        fitness, aliments=aliments
     ),
-    fitness_limit=740,
+    fitness_limit=2,
     generation_limit=100
 )
 
 
-def genome_to_things(genome: Genome, things: [Thing]) -> [Thing]:
+def genome_to_aliments(genome: Genome, aliments: [Aliment]) -> [Aliment]:
     result = []
-    for i, thing in enumerate(things):
+    for i, aliment in enumerate(aliments):
         if genome[i] == 1:
-            result += [thing.name]
+            result += [aliment.name]
     
     return result
 
 print(f"number of generations: {generations}")
-print(f"best solution: {genome_to_things(population[0], things)}")
+print(f"best solution: {genome_to_aliments(population[0], aliments)}")
