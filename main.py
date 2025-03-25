@@ -18,7 +18,7 @@ df = pd.read_excel("data/nutritional_data.xlsx").dropna()
 
 aliments= []
 
-grammes = [5, 50, 100]
+grammes = [50, 100]
 for index, row in df.iterrows():
     for i in range(len(grammes)):
         aliments.append(Aliment(row['Product'] + f" {grammes[i]}g", row['kcalPerRetailUnit'] * grammes[i]/1000, row['gProteinPerRetailUnit'] * grammes[i]/1000, row['gFatPerRetailUnit'] * grammes[i]/1000, row['gCarbPerRetailUnit'] * grammes[i]/1000))
@@ -218,7 +218,7 @@ def second_mutation(genome: Genome, num: int = 1, probability: float = 0.5) -> P
     return clean_mutated_population
 
 
-mutated_population = second_mutation(population[0], num=20, probability=1)
+mutated_population = second_mutation(population[0], num=5, probability=1)
 
 for i in range(len(mutated_population)):
     with open('recipes.txt', 'a') as f:
