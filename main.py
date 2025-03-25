@@ -2,7 +2,7 @@ import math
 import pandas as pd
 from functools import partial
 from typing import List, Callable, Tuple
-from random import choices, randint, randrange, random
+from random import choices, randint, randrange, random, shuffle
 from collections import namedtuple
 
 Genome = List[int]
@@ -33,8 +33,11 @@ def genome_to_aliments(genome: Genome, aliments: [Aliment]) -> [Aliment]:
     return result
 
 
-def generate_genome(length: int) -> Genome:
-    return choices([0, 1], k=length)
+def generate_genome(length: int):
+    num_ones = randint(1, min(10, length))
+    genome = num_ones * [1] + (length - num_ones) * [0]
+    shuffle(genome)
+    return genome
 
 
 def generate_population(size: int, genome_length: int) -> Population:
