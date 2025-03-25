@@ -1,66 +1,14 @@
-0['Wheat & Rye (Bread) 5g', 'Maize (Meal) 50g', 'Barley (Beer) 5g', 'Oatmeal 5g', 'Rice 5g', 'Potatoes 5g', 'Other Pulses 50g', 'Sunflower Oil 50g', 'Bananas 5g', 'Brassicas 5g', 'Berries & Grapes 100g', 'Other Fruit 5g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
+0['Rice 5g', 'Beet Sugar 100g', 'Other Pulses 50g', 'Soymilk 5g', 'Soybean Oil 5g', 'Citrus Fruit 5g', 'Citrus Fruit 100g', 'Berries & Grapes 50g', 'Tofu 100g', 'Bovine Meat (beef herd) 50g']
 
-1['Maize (Meal) 5g', 'Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Cassava 5g', 'Other Pulses 50g', 'Peas 5g', 'Soybean Oil 50g', 'Bananas 5g', 'Apples 5g', 'Citrus Fruit 100g', 'Wine 50g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
+1['Oatmeal 50g', 'Cane Sugar 50g', 'Soymilk 5g', 'Soybean Oil 5g', 'Onions & Leeks 5g', 'Citrus Fruit 5g', 'Citrus Fruit 100g', 'Bovine Meat (beef herd) 100g', 'Poultry Meat 50g', 'Milk 100g']
 
-2['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Cane Sugar 5g', 'Other Pulses 50g', 'Dark Chocolate 50g', 'Onions & Leeks 100g', 'Bananas 5g', 'Brassicas 100g', 'Berries & Grapes 100g', 'Poultry Meat 50g', 'Milk 50g', 'Other Vegetables 5g', 'Other Vegetables 50g', 'Other Vegetables 100g', 'Crustaceans (farmed) 5g']
+2['Maize (Meal) 100g', 'Cane Sugar 50g', 'Soymilk 5g', 'Soymilk 50g', 'Coffee 50g', 'Soybean Oil 5g', 'Sunflower Oil 5g', 'Citrus Fruit 100g', 'Berries & Grapes 5g', 'Bovine Meat (beef herd) 100g']
 
-3['Barley (Beer) 5g', 'Rice 5g', 'Cane Sugar 100g', 'Other Pulses 50g', 'Palm Oil 5g', 'Onions & Leeks 50g', 'Bananas 5g', 'Brassicas 100g', 'Lamb & Mutton 100g', 'Milk 100g', 'Cheese 5g', 'Other Vegetables 50g', 'Fish (farmed) 5g', 'Crustaceans (farmed) 5g']
+3['Maize (Meal) 100g', 'Barley (Beer) 5g', 'Cane Sugar 50g', 'Soymilk 5g', 'Soybean Oil 5g', 'Citrus Fruit 5g', 'Bovine Meat (beef herd) 5g', 'Bovine Meat (beef herd) 100g', 'Other Vegetables 50g', 'Fish (farmed) 100g']
 
-4['Barley (Beer) 5g', 'Rice 5g', 'Cane Sugar 100g', 'Other Pulses 50g', 'Coffee 5g', 'Soybean Oil 5g', 'Sunflower Oil 5g', 'Bananas 5g', 'Apples 5g', 'Citrus Fruit 50g', 'Tofu 5g', 'Poultry Meat 50g', 'Other Vegetables 100g', 'Crustaceans (farmed) 5g']
+4['Maize (Meal) 100g', 'Cane Sugar 50g', 'Other Pulses 5g', 'Soymilk 5g', 'Soybean Oil 5g', 'Brassicas 5g', 'Citrus Fruit 5g', 'Citrus Fruit 100g', 'Bovine Meat (beef herd) 100g', 'Lamb & Mutton 5g']
 
-5['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Cassava 5g', 'Other Pulses 50g', 'Nuts 5g', 'Onions & Leeks 5g', 'Bananas 5g', 'Bananas 50g', 'Apples 50g', 'Eggs 5g', 'Root Vegetables 5g', 'Cheese 50g', 'Other Vegetables 50g', 'Other Vegetables 100g', 'Crustaceans (farmed) 5g']
+5['Maize (Meal) 50g', 'Cane Sugar 50g', 'Soymilk 50g', 'Soybean Oil 5g', 'Brassicas 5g', 'Citrus Fruit 100g', 'Tofu 50g', 'Bovine Meat (beef herd) 100g', 'Pig Meat 50g', 'Root Vegetables 100g']
 
-6['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Other Pulses 50g', 'Groundnuts 5g', 'Dark Chocolate 50g', 'Onions & Leeks 100g', 'Bananas 5g', 'Brassicas 5g', 'Apples 100g', 'Eggs 100g', 'Tomatoes 5g', 'Pig Meat 5g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-7['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Beet Sugar 5g', 'Other Pulses 50g', 'Soymilk 50g', 'Bananas 5g', 'Tofu 50g', 'Wine 5g', 'Pig Meat 100g', 'Milk 50g', 'Cheese 5g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-8['Barley (Beer) 5g', 'Rice 5g', 'Cane Sugar 100g', 'Other Pulses 50g', 'Nuts 5g', 'Rapeseed Oil 5g', 'Bananas 5g', 'Brassicas 5g', 'Citrus Fruit 5g', 'Tofu 100g', 'Wine 50g', 'Other Vegetables 50g', 'Other Vegetables 100g', 'Crustaceans (farmed) 5g']
-
-9['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Other Pulses 50g', 'Dark Chocolate 5g', 'Rapeseed Oil 5g', 'Olive Oil 5g', 'Onions & Leeks 100g', 'Bananas 5g', 'Tofu 5g', 'Cheese 5g', 'Cheese 50g', 'Other Vegetables 50g', 'Fish (farmed) 5g', 'Fish (farmed) 50g', 'Crustaceans (farmed) 5g']
-
-10['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Other Pulses 50g', 'Palm Oil 50g', 'Bananas 5g', 'Bananas 50g', 'Poultry Meat 5g', 'Tomatoes 5g', 'Root Vegetables 5g', 'Cheese 5g', 'Crustaceans (farmed) 5g']
-
-11['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Potatoes 5g', 'Cassava 50g', 'Other Pulses 50g', 'Soymilk 100g', 'Dark Chocolate 50g', 'Onions & Leeks 100g', 'Bananas 5g', 'Brassicas 5g', 'Bovine Meat (beef herd) 5g', 'Wine 50g', 'Other Vegetables 5g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-12['Wheat & Rye (Bread) 5g', 'Barley (Beer) 5g', 'Rice 5g', 'Potatoes 5g', 'Other Pulses 50g', 'Nuts 5g', 'Coffee 50g', 'Olive Oil 50g', 'Bananas 5g', 'Apples 5g', 'Tomatoes 100g', 'Root Vegetables 50g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-13['Maize (Meal) 50g', 'Rice 5g', 'Cassava 5g', 'Cane Sugar 50g', 'Other Pulses 50g', 'Sunflower Oil 5g', 'Onions & Leeks 100g', 'Bananas 5g', 'Citrus Fruit 100g', 'Lamb & Mutton 100g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-14['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Barley (Beer) 100g', 'Rice 5g', 'Cassava 50g', 'Beet Sugar 5g', 'Other Pulses 5g', 'Other Pulses 50g', 'Soymilk 50g', 'Onions & Leeks 100g', 'Bananas 5g', 'Bovine Meat (beef herd) 50g', 'Other Fruit 100g', 'Pig Meat 50g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-15['Barley (Beer) 5g', 'Rice 5g', 'Potatoes 100g', 'Cassava 5g', 'Cane Sugar 100g', 'Groundnuts 50g', 'Dark Chocolate 5g', 'Onions & Leeks 5g', 'Bananas 5g', 'Berries & Grapes 50g', 'Cheese 5g', 'Crustaceans (farmed) 5g']
-
-16['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Oatmeal 50g', 'Rice 5g', 'Other Pulses 50g', 'Peas 5g', 'Soybean Oil 5g', 'Bananas 5g', 'Pig Meat 5g', 'Root Vegetables 50g', 'Milk 5g', 'Cheese 50g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-17['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Cassava 5g', 'Cassava 50g', 'Other Pulses 50g', 'Groundnuts 50g', 'Bananas 5g', 'Wine 5g', 'Root Vegetables 50g', 'Milk 5g', 'Milk 100g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-18['Maize (Meal) 5g', 'Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Cassava 50g', 'Other Pulses 50g', 'Dark Chocolate 50g', 'Bananas 5g', 'Brassicas 100g', 'Apples 100g', 'Citrus Fruit 50g', 'Berries & Grapes 5g', 'Poultry Meat 50g', 'Tomatoes 50g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-19['Barley (Beer) 5g', 'Rice 5g', 'Cane Sugar 100g', 'Other Pulses 50g', 'Soybean Oil 5g', 'Palm Oil 5g', 'Bananas 5g', 'Citrus Fruit 100g', 'Berries & Grapes 5g', 'Milk 5g', 'Milk 100g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g', 'Crustaceans (farmed) 50g']
-
-20['Maize (Meal) 50g', 'Barley (Beer) 100g', 'Rice 5g', 'Cane Sugar 5g', 'Other Pulses 50g', 'Peas 5g', 'Dark Chocolate 50g', 'Bananas 5g', 'Citrus Fruit 50g', 'Poultry Meat 100g', 'Eggs 50g', 'Other Vegetables 5g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-21['Wheat & Rye (Bread) 50g', 'Maize (Meal) 50g', 'Rice 5g', 'Other Pulses 50g', 'Rapeseed Oil 5g', 'Onions & Leeks 50g', 'Bananas 5g', 'Brassicas 100g', 'Berries & Grapes 100g', 'Tofu 50g', 'Wine 100g', 'Eggs 5g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-22['Wheat & Rye (Bread) 50g', 'Maize (Meal) 50g', 'Rice 5g', 'Other Pulses 50g', 'Groundnuts 5g', 'Soymilk 50g', 'Rapeseed Oil 5g', 'Onions & Leeks 5g', 'Bananas 5g', 'Lamb & Mutton 100g', 'Pig Meat 5g', 'Crustaceans (farmed) 5g']
-
-23['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Other Pulses 50g', 'Peas 50g', 'Rapeseed Oil 5g', 'Bananas 5g', 'Apples 50g', 'Citrus Fruit 5g', 'Wine 50g', 'Pig Meat 5g', 'Milk 50g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-24['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Beet Sugar 50g', 'Other Pulses 50g', 'Soymilk 100g', 'Brassicas 5g', 'Poultry Meat 50g', 'Eggs 50g', 'Tomatoes 5g', 'Root Vegetables 50g', 'Milk 5g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-25['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Cassava 50g', 'Beet Sugar 5g', 'Other Pulses 50g', 'Dark Chocolate 5g', 'Olive Oil 5g', 'Bananas 5g', 'Bananas 100g', 'Berries & Grapes 5g', 'Eggs 100g', 'Cheese 5g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-26['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Oatmeal 5g', 'Rice 5g', 'Palm Oil 50g', 'Dark Chocolate 5g', 'Bananas 5g', 'Poultry Meat 100g', 'Tomatoes 50g', 'Other Vegetables 50g', 'Fish (farmed) 5g', 'Crustaceans (farmed) 5g']
-
-27['Barley (Beer) 5g', 'Rice 5g', 'Cane Sugar 100g', 'Other Pulses 50g', 'Bananas 5g', 'Brassicas 100g', 'Other Fruit 100g', 'Eggs 50g', 'Lamb & Mutton 100g', 'Other Vegetables 50g']
-
-28['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Cassava 5g', 'Other Pulses 50g', 'Olive Oil 5g', 'Bananas 5g', 'Bananas 100g', 'Apples 50g', 'Tofu 100g', 'Wine 5g', 'Tomatoes 5g', 'Cheese 50g', 'Other Vegetables 50g', 'Fish (farmed) 5g', 'Crustaceans (farmed) 5g']
-
-29['Barley (Beer) 5g', 'Barley (Beer) 50g', 'Rice 5g', 'Other Pulses 50g', 'Soymilk 5g', 'Sunflower Oil 5g', 'Sunflower Oil 50g', 'Bananas 5g', 'Apples 100g', 'Berries & Grapes 5g', 'Pig Meat 5g', 'Cheese 5g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-30['Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Cane Sugar 50g', 'Other Pulses 50g', 'Dark Chocolate 50g', 'Rapeseed Oil 5g', 'Other Fruit 5g', 'Other Fruit 100g', 'Tomatoes 5g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-31['Wheat & Rye (Bread) 50g', 'Maize (Meal) 50g', 'Barley (Beer) 5g', 'Rice 5g', 'Potatoes 50g', 'Other Pulses 50g', 'Nuts 5g', 'Bananas 5g', 'Brassicas 50g', 'Citrus Fruit 50g', 'Berries & Grapes 50g', 'Wine 5g', 'Eggs 100g', 'Tomatoes 50g', 'Other Vegetables 50g', 'Crustaceans (farmed) 5g']
-
-32['Wheat & Rye (Bread) 50g', 'Maize (Meal) 50g', 'Barley (Beer) 5g', 'Barley (Beer) 100g', 'Rice 5g', 'Peas 5g', 'Bananas 5g', 'Bananas 50g', 'Citrus Fruit 50g', 'Other Fruit 5g', 'Pig Meat 100g', 'Other Vegetables 50g', 'Fish (farmed) 100g', 'Crustaceans (farmed) 5g']
+0['Wheat & Rye (Bread) 50g', 'Maize (Meal) 5g', 'Oatmeal 100g', 'Potatoes 50g', 'Rapeseed Oil 5g', 'Onions & Leeks 5g', 'Wine 50g', 'Other Vegetables 5g', 'Crustaceans (farmed) 50g', 'Crustaceans (farmed) 100g']
 

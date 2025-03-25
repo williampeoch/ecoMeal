@@ -53,6 +53,9 @@ def fitness(genome: Genome, aliments: [Aliment]) -> int:
     if len(genome) != len(aliments):
         raise ValueError("genome and aliments must be of the same length")
     
+    if genome.count(1) > 10:
+        return 0
+    
     prot = 0
     fat = 0
     carb = 0
@@ -209,13 +212,13 @@ def second_mutation(genome: Genome, num: int = 1, probability: float = 0.5) -> P
     clean_mutated_population = []
     for genome_mutated in mutated_population:
         # check calories
-        if (macros(genome_mutated)[0] > 700) and macros(genome_mutated)[0] < 900 and (macros(genome_mutated)[1] > 10) and (macros(genome_mutated)[1] < 40) and (macros(genome_mutated)[2] > 10) and (macros(genome_mutated)[2]) < 60 and (macros(genome_mutated)[3]) > 50 and (macros(genome_mutated)[3]) < 150:
+        if (macros(genome_mutated)[0] > 700) and macros(genome_mutated)[0] < 900 and (macros(genome_mutated)[1] > 10) and (macros(genome_mutated)[1] < 40) and (macros(genome_mutated)[2] > 10) and (macros(genome_mutated)[2]) < 60 and (macros(genome_mutated)[3]) > 50 and (macros(genome_mutated)[3]) < 150 and genome_mutated.count(1) <= 10:
             clean_mutated_population.append(genome_mutated)
          
     return clean_mutated_population
 
 
-mutated_population = second_mutation(population[0], num=10, probability=1)
+mutated_population = second_mutation(population[0], num=20, probability=1)
 
 for i in range(len(mutated_population)):
     with open('recipes.txt', 'a') as f:
