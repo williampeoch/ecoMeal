@@ -12,32 +12,29 @@ PopulateFunc = Callable[[], Population]
 SelectionFunc = Callable[[Population, FitnessFunc], Tuple[Genome, Genome]]
 CrossoverFunc = Callable[[Genome, Genome], Tuple[Genome, Genome]]
 MutationFunc = Callable[[Genome], Genome]
-Aliment = namedtuple('Aliment', ['name', 'kcal', 'prot', 'fat', 'carb'])
+Aliment = namedtuple('Aliment', ['name', 'kcal', 'prot', 'fat', 'carb', 'grammes', 'eco_score'])
 
 df = pd.read_excel("data/nutritional_data.xlsx").dropna()
+df_eco = pd.read_excel("data/eco_data.xlsx")
 
 aliments= []
 
-grammes = [50, 100]
+grammes = [10, 50, 100]
 for index, row in df.iterrows():
     for i in range(len(grammes)):
-        aliments.append(Aliment(row['Product'] + f" {grammes[i]}g", row['kcalPerRetailUnit'] * grammes[i]/1000, row['gProteinPerRetailUnit'] * grammes[i]/1000, row['gFatPerRetailUnit'] * grammes[i]/1000, row['gCarbPerRetailUnit'] * grammes[i]/1000))
+        aliments.append(Aliment(row['Product'], row['kcalPerRetailUnit'] * grammes[i]/1000, row['gProteinPerRetailUnit'] * grammes[i]/1000, row['gFatPerRetailUnit'] * grammes[i]/1000, row['gCarbPerRetailUnit'] * grammes[i]/1000, grammes[i], df_eco.loc[index, 'Score'] * grammes[i]/1000))
 
-
-def genome_to_aliments(genome: Genome, aliments: [Aliment]) -> [Aliment]:
+def genome_to_aliments(genome: Genome, aliments: [Aliment]):
     result = []
     for i, aliment in enumerate(aliments):
         if genome[i] == 1:
-            result += [aliment.name]
+            result += [f"{aliment.name} {aliment.grammes}g"]
     
     return result
 
 
-def generate_genome(length: int):
-    num_ones = randint(1, min(10, length))
-    genome = num_ones * [1] + (length - num_ones) * [0]
-    shuffle(genome)
-    return genome
+def generate_genome(length: int) -> Genome:
+    return choices([0, 1], k=length)
 
 
 def generate_population(size: int, genome_length: int) -> Population:
@@ -49,12 +46,9 @@ def gaussian(x, mu, sigma):
 
 hist_fitness = []
 
-def fitness(genome: Genome, aliments: [Aliment]) -> int:
+def fitness(genome: Genome, aliments: [Aliment]) -> float:
     if len(genome) != len(aliments):
         raise ValueError("genome and aliments must be of the same length")
-    
-    if genome.count(1) > 10:
-        return 0
     
     prot = 0
     fat = 0
@@ -63,25 +57,27 @@ def fitness(genome: Genome, aliments: [Aliment]) -> int:
 
     for i, aliment in enumerate(aliments):
         if genome[i] == 1:
+            kcal += aliment.kcal
             prot += aliment.prot
             fat += aliment.fat
             carb += aliment.carb
-            kcal += aliment.kcal
 
     kcal_fitness = gaussian(kcal, 800, 1000)
-    prot_fitness = gaussian(kcal, 25, 10000)
-    fat_fitness = gaussian(kcal, 30, 10000)
-    carb_fitness = gaussian(kcal, 100, 10000)
-
-    hist_fitness.append((kcal_fitness + prot_fitness + fat_fitness + carb_fitness) / 4)
-    
-    return (kcal_fitness + prot_fitness + fat_fitness + carb_fitness) / 4
+    prot_fitness = gaussian(prot, 25, 1000)
+    fat_fitness = gaussian(fat, 30, 1000)
+    carb_fitness = gaussian(carb, 100, 1000)
+    return kcal_fitness * prot_fitness * fat_fitness * carb_fitness
 
 
 def selection_pair(population: Population, fitness_func: FitnessFunc) -> Population:
+    weights=[fitness_func(genome) for genome in population],
+    weights = weights[0] if isinstance(weights, tuple) else weights # idk why but it return a tuple instead of a list
+    if sum(weights) == 0:
+        return choices(population, k=2)
+
     return choices(
         population=population,
-        weights=[fitness_func(genome) for genome in population],
+        weights=weights,
         k=2
     )
 
@@ -126,6 +122,8 @@ def run_evolution(
         if fitness_func(population[0]) >= fitness_limit:
             break
         
+        hist_fitness.append(fitness_func(population[0]))
+        
         next_generation = population[0:2]
 
         for j in range(int(len(population) / 2) - 1):
@@ -153,7 +151,7 @@ population, generations = run_evolution(
     fitness_func=partial(
         fitness, aliments=aliments
     ),
-    fitness_limit=2,
+    fitness_limit=0.99,
     generation_limit=1000
 )
 
@@ -176,54 +174,115 @@ population, generations = run_evolution(
 
 # print(f"\nCIBLE : KCalories: 800, Prot: 25, Fat: 30, Carb: 100\n")
 # print(f"Repas: kcal: {kcal_total}, prot: {prot_total}, fat: {fat_total}, carb: {carb_total}")
-
+# print(fitness(population[0], aliments))
 
 
 # import matplotlib.pyplot as plt
 # x_values = range(1, len(hist_fitness)+1)
 
-# plt.plot(x_values, hist_fitness)
+# plt.plot(x_values, hist_fitness, linewidth=0.1)
 # plt.show()
 
-def macros(genome):
-    kcal_total = 0
-    prot_total = 0
-    fat_total = 0
-    carb_total = 0
-    for alim_string in genome_to_aliments(genome, aliments):
-        for aliment in aliments:
-            if aliment.name == alim_string:
-                kcal_total += aliment.kcal
-                prot_total += aliment.prot
-                fat_total += aliment.fat
-                carb_total += aliment.carb
-    return [kcal_total, prot_total, fat_total, carb_total]
 
 
-def second_mutation(genome: Genome, num: int = 1, probability: float = 0.5) -> Population:
+# SECOND MUTATION
+
+def second_mutation(genome):
     mutated_population = []
-    for _ in range(10000):
-        original_genome = genome[:]
-        for _ in range(num):
-            index = randrange(len(original_genome))
-            original_genome[index] = abs(original_genome[index] - 1)
-        mutated_population.append(original_genome)
+
+    for i in range(10000):
+        modified_genome = genome[:]
+        for _ in range(10):
+            index = randrange(len(modified_genome))
+            modified_genome[index] = abs(modified_genome[index] - 1)
+            mutated_population.append(modified_genome)
     
-    clean_mutated_population = []
-    for genome_mutated in mutated_population:
-        # check calories
-        if (macros(genome_mutated)[0] > 700) and macros(genome_mutated)[0] < 900 and (macros(genome_mutated)[1] > 10) and (macros(genome_mutated)[1] < 40) and (macros(genome_mutated)[2] > 10) and (macros(genome_mutated)[2]) < 60 and (macros(genome_mutated)[3]) > 50 and (macros(genome_mutated)[3]) < 150 and genome_mutated.count(1) <= 10:
-            clean_mutated_population.append(genome_mutated)
-         
-    return clean_mutated_population
+    return mutated_population
 
 
-mutated_population = second_mutation(population[0], num=5, probability=1)
+def calculate_macros(genome, aliments):
+    kcal = 0
+    prot = 0
+    fat = 0
+    carb = 0
 
-for i in range(len(mutated_population)):
+    for i, aliment in enumerate(aliments):
+        if genome[i] == 1:
+            kcal += aliment.kcal
+            prot += aliment.prot
+            fat += aliment.fat
+            carb += aliment.carb
+
+    return {'kcal': kcal, 'prot': prot, 'fat': fat, 'carb': carb}
+
+
+def select_second_mutations(mutated_population):
+    selected_population = []
+
+    for genome in mutated_population:
+        genome_macros = calculate_macros(genome, aliments)
+        if genome_macros['kcal'] > 700 and genome_macros['kcal'] < 900 and genome_macros['prot'] > 10 and genome_macros['prot'] < 50 and genome_macros['fat'] > 10 and genome_macros['fat'] < 40 and genome_macros['carb'] > 50 and genome_macros['carb'] < 150:
+            selected_population.append(genome)
+    
+    return selected_population
+
+
+second_mutated_population = select_second_mutations(second_mutation(population[0]))
+
+for i, genome in enumerate(second_mutated_population):
     with open('recipes.txt', 'a') as f:
-                f.write(str(i) + str(genome_to_aliments(mutated_population[i], aliments)) + "\n\n")
+        f.write(str(i) + str(genome_to_aliments(genome, aliments)) + "\n\n")
 
-# print(f"Mutation solution: {genome_to_aliments(mutated_population[0], aliments)}")
-# print(f"\nCIBLE : KCalories: 800, Prot: 25, Fat: 30, Carb: 100\n")
-# print(f"Repas: kcal: {kcal_total}, prot: {prot_total}, fat: {fat_total}, carb: {carb_total}")
+
+
+
+
+
+
+
+
+print(calculate_macros(population[0], aliments))
+
+
+
+
+
+# def macros(genome):
+#     kcal_total = 0
+#     prot_total = 0
+#     fat_total = 0
+#     carb_total = 0
+#     for alim_string in genome_to_aliments(genome, aliments):
+#         for aliment in aliments:
+#             if aliment.name == alim_string:
+#                 kcal_total += aliment.kcal
+#                 prot_total += aliment.prot
+#                 fat_total += aliment.fat
+#                 carb_total += aliment.carb
+#             print(f"{aliment.name} n'est pas dans {alim_string}")
+#     return [kcal_total, prot_total, fat_total, carb_total]
+
+
+# def second_mutation(genome: Genome, num: int = 1, probability: float = 0.5) -> Population:
+#     mutated_population = []
+#     for _ in range(10):
+#         original_genome = genome[:]
+#         for _ in range(num):
+#             index = randrange(len(original_genome))
+#             original_genome[index] = abs(original_genome[index] - 1)
+#         mutated_population.append(original_genome)
+    
+#     clean_mutated_population = []
+#     for genome_mutated in mutated_population:
+#         # check calories
+#         if (macros(genome_mutated)[0] > 700) and macros(genome_mutated)[0] < 900 and (macros(genome_mutated)[1] > 10) and (macros(genome_mutated)[1] < 40) and (macros(genome_mutated)[2] > 10) and (macros(genome_mutated)[2]) < 60 and (macros(genome_mutated)[3]) > 50 and (macros(genome_mutated)[3]) < 150:
+#             clean_mutated_population.append(genome_mutated)
+         
+#     return clean_mutated_population
+
+
+# mutated_population = second_mutation(population[0], num=5, probability=1)
+
+# for i in range(len(mutated_population)):
+#     with open('recipes.txt', 'a') as f:
+#                 f.write(str(i) + str(genome_to_aliments(mutated_population[i], aliments)) + "\n\n")
