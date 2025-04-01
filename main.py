@@ -19,7 +19,7 @@ df_eco = pd.read_excel("data/eco_data.xlsx")
 
 aliments= []
 
-grammes = [10, 50, 100]
+grammes = [10, 25, 50, 100]
 for index, row in df.iterrows():
     for i in range(len(grammes)):
         aliments.append(Aliment(row['Product'], row['kcalPerRetailUnit'] * grammes[i]/1000, row['gProteinPerRetailUnit'] * grammes[i]/1000, row['gFatPerRetailUnit'] * grammes[i]/1000, row['gCarbPerRetailUnit'] * grammes[i]/1000, grammes[i], df_eco.loc[index, 'Score'] * grammes[i]/1000))
@@ -50,10 +50,12 @@ def fitness(genome: Genome, aliments: [Aliment]) -> float:
     if len(genome) != len(aliments):
         raise ValueError("genome and aliments must be of the same length")
     
+    kcal = 0
     prot = 0
     fat = 0
     carb = 0
-    kcal = 0
+
+    eco_score = 0
 
     for i, aliment in enumerate(aliments):
         if genome[i] == 1:
@@ -61,12 +63,15 @@ def fitness(genome: Genome, aliments: [Aliment]) -> float:
             prot += aliment.prot
             fat += aliment.fat
             carb += aliment.carb
+            eco_score += aliment.eco_score
+
 
     kcal_fitness = gaussian(kcal, 800, 1000)
-    prot_fitness = gaussian(prot, 25, 1000)
+    prot_fitness = gaussian(prot, 25, 100)
     fat_fitness = gaussian(fat, 30, 1000)
     carb_fitness = gaussian(carb, 100, 1000)
-    return kcal_fitness * prot_fitness * fat_fitness * carb_fitness
+
+    return kcal_fitness * prot_fitness * fat_fitness * carb_fitness * math.exp(-eco_score/10)
 
 
 def selection_pair(population: Population, fitness_func: FitnessFunc) -> Population:
@@ -195,7 +200,7 @@ def second_mutation(genome):
         for _ in range(10):
             index = randrange(len(modified_genome))
             modified_genome[index] = abs(modified_genome[index] - 1)
-            mutated_population.append(modified_genome)
+        mutated_population.append(modified_genome)
     
     return mutated_population
 
@@ -206,14 +211,17 @@ def calculate_macros(genome, aliments):
     fat = 0
     carb = 0
 
+    eco_score = 0
+
     for i, aliment in enumerate(aliments):
         if genome[i] == 1:
             kcal += aliment.kcal
             prot += aliment.prot
             fat += aliment.fat
             carb += aliment.carb
+            eco_score += aliment.eco_score
 
-    return {'kcal': kcal, 'prot': prot, 'fat': fat, 'carb': carb}
+    return {'kcal': kcal, 'prot': prot, 'fat': fat, 'carb': carb, 'eco_score': eco_score}
 
 
 def select_second_mutations(mutated_population):
@@ -221,8 +229,9 @@ def select_second_mutations(mutated_population):
 
     for genome in mutated_population:
         genome_macros = calculate_macros(genome, aliments)
-        if genome_macros['kcal'] > 700 and genome_macros['kcal'] < 900 and genome_macros['prot'] > 10 and genome_macros['prot'] < 50 and genome_macros['fat'] > 10 and genome_macros['fat'] < 40 and genome_macros['carb'] > 50 and genome_macros['carb'] < 150:
+        if genome_macros['kcal'] > 700 and genome_macros['kcal'] < 900 and genome_macros['prot'] > 10 and genome_macros['prot'] < 50 and genome_macros['fat'] > 10 and genome_macros['fat'] < 40 and genome_macros['carb'] > 50 and genome_macros['carb'] < 150 and math.exp(-genome_macros['eco_score']/10) > 0.9:
             selected_population.append(genome)
+            print(genome_macros['eco_score'])
     
     return selected_population
 
@@ -242,6 +251,7 @@ for i, genome in enumerate(second_mutated_population):
 
 
 print(calculate_macros(population[0], aliments))
+print(genome_to_aliments(population[0], aliments))
 
 
 
