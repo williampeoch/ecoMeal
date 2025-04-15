@@ -1,146 +1,32 @@
-0['Wheat & Rye (Bread) 100g', 'Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tofu 50g', 'Eggs 100g', 'Tomatoes 50g', 'Fish (farmed) 50g']
+0['Maize (Meal) 10g', 'Oatmeal 10g', 'Potatoes 100g', 'Cassava 25g', 'Cassava 50g', 'Beet Sugar 10g', 'Beet Sugar 25g', 'Peas 10g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Coffee 10g', 'Coffee 50g', 'Palm Oil 10g', 'Olive Oil 10g', 'Bananas 25g', 'Apples 10g', 'Citrus Fruit 10g', 'Tofu 50g', 'Other Fruit 10g', 'Other Fruit 100g']
 
-1['Maize (Meal) 50g', 'Potatoes 100g', 'Cassava 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Citrus Fruit 100g', 'Bovine Meat (beef herd) 50g', 'Bovine Meat (beef herd) 100g', 'Tomatoes 50g']
+1['Maize (Meal) 10g', 'Oatmeal 10g', 'Cassava 25g', 'Cassava 50g', 'Cane Sugar 25g', 'Beet Sugar 10g', 'Beet Sugar 25g', 'Peas 10g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Coffee 10g', 'Palm Oil 10g', 'Olive Oil 10g', 'Bananas 10g', 'Bananas 25g', 'Berries & Grapes 100g', 'Bovine Meat (beef herd) 25g', 'Wine 25g']
 
-2['Potatoes 100g', 'Beet Sugar 100g', 'Nuts 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Brassicas 100g', 'Tomatoes 50g', 'Other Vegetables 100g']
+2['Maize (Meal) 10g', 'Oatmeal 10g', 'Potatoes 100g', 'Cassava 25g', 'Cassava 50g', 'Cassava 100g', 'Cane Sugar 25g', 'Beet Sugar 10g', 'Soymilk 25g', 'Soymilk 100g', 'Palm Oil 10g', 'Olive Oil 10g', 'Onions & Leeks 100g', 'Bananas 25g', 'Citrus Fruit 10g', 'Citrus Fruit 25g', 'Tofu 50g', 'Eggs 10g']
 
-3['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Brassicas 50g', 'Tomatoes 50g', 'Pig Meat 100g']
+3['Oatmeal 10g', 'Cassava 25g', 'Cassava 50g', 'Cassava 100g', 'Beet Sugar 10g', 'Beet Sugar 25g', 'Peas 10g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 100g', 'Sunflower Oil 25g', 'Olive Oil 10g', 'Apples 10g', 'Citrus Fruit 25g', 'Berries & Grapes 10g', 'Tofu 50g', 'Bovine Meat (beef herd) 10g', 'Fish (farmed) 10g']
 
-4['Potatoes 100g', 'Other Pulses 50g', 'Soymilk 100g', 'Rapeseed Oil 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Eggs 50g', 'Tomatoes 50g']
+4['Cassava 25g', 'Cassava 50g', 'Cassava 100g', 'Beet Sugar 10g', 'Beet Sugar 25g', 'Peas 10g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Olive Oil 10g', 'Bananas 10g', 'Bananas 25g', 'Brassicas 50g', 'Citrus Fruit 25g', 'Tofu 25g', 'Tofu 50g', 'Other Fruit 10g', 'Other Fruit 100g', 'Eggs 10g']
 
-5['Maize (Meal) 50g', 'Potatoes 100g', 'Cane Sugar 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Eggs 100g', 'Tomatoes 50g']
+5['Maize (Meal) 10g', 'Oatmeal 10g', 'Cassava 25g', 'Cassava 50g', 'Cassava 100g', 'Beet Sugar 10g', 'Peas 10g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Palm Oil 10g', 'Olive Oil 10g', 'Bananas 10g', 'Bananas 25g', 'Citrus Fruit 50g', 'Berries & Grapes 100g', 'Wine 50g', 'Cheese 10g']
 
-6['Potatoes 100g', 'Soymilk 100g', 'Dark Chocolate 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tofu 50g', 'Tomatoes 50g', 'Lamb & Mutton 100g']
+6['Maize (Meal) 10g', 'Oatmeal 10g', 'Cassava 50g', 'Cassava 100g', 'Beet Sugar 10g', 'Beet Sugar 25g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Palm Oil 10g', 'Olive Oil 10g', 'Bananas 25g', 'Tofu 50g', 'Bovine Meat (beef herd) 100g', 'Other Fruit 50g', 'Other Vegetables 10g']
 
-7['Maize (Meal) 50g', 'Oatmeal 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Onions & Leeks 100g', 'Bananas 100g', 'Tomatoes 50g', 'Root Vegetables 100g', 'Cheese 50g']
+7['Wheat & Rye (Bread) 25g', 'Maize (Meal) 10g', 'Oatmeal 10g', 'Cassava 25g', 'Cassava 50g', 'Cassava 100g', 'Beet Sugar 25g', 'Peas 10g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Coffee 10g', 'Palm Oil 10g', 'Berries & Grapes 100g', 'Tofu 50g']
 
-8['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Other Fruit 100g', 'Tomatoes 50g', 'Pig Meat 100g']
+8['Wheat & Rye (Bread) 10g', 'Maize (Meal) 10g', 'Barley (Beer) 50g', 'Oatmeal 10g', 'Cassava 25g', 'Cassava 50g', 'Cassava 100g', 'Beet Sugar 10g', 'Beet Sugar 25g', 'Peas 10g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Palm Oil 10g', 'Olive Oil 10g', 'Onions & Leeks 50g', 'Bananas 10g', 'Tofu 50g', 'Bovine Meat (beef herd) 25g', 'Other Vegetables 50g']
 
-9['Potatoes 100g', 'Beet Sugar 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Lamb & Mutton 50g', 'Pig Meat 50g']
+9['Maize (Meal) 10g', 'Oatmeal 10g', 'Rice 25g', 'Cassava 25g', 'Cassava 100g', 'Cane Sugar 10g', 'Beet Sugar 25g', 'Peas 10g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Coffee 10g', 'Coffee 100g', 'Olive Oil 10g', 'Tofu 50g', 'Wine 100g', 'Other Fruit 25g']
 
-10['Maize (Meal) 50g', 'Potatoes 100g', 'Cassava 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Wine 50g', 'Poultry Meat 100g', 'Tomatoes 50g', 'Cheese 50g']
+10['Maize (Meal) 10g', 'Oatmeal 10g', 'Rice 25g', 'Potatoes 50g', 'Cassava 25g', 'Cassava 50g', 'Cassava 100g', 'Beet Sugar 10g', 'Beet Sugar 25g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Olive Oil 10g', 'Onions & Leeks 10g', 'Bananas 25g', 'Brassicas 50g', 'Berries & Grapes 25g', 'Tofu 50g', 'Bovine Meat (beef herd) 50g', 'Other Fruit 25g', 'Other Vegetables 10g']
 
-11['Maize (Meal) 50g', 'Potatoes 100g', 'Cane Sugar 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Brassicas 50g', 'Eggs 100g', 'Tomatoes 50g', 'Fish (farmed) 50g']
+11['Maize (Meal) 10g', 'Cassava 25g', 'Cassava 50g', 'Cassava 100g', 'Beet Sugar 10g', 'Beet Sugar 25g', 'Peas 10g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Palm Oil 10g', 'Olive Oil 10g', 'Bananas 25g', 'Brassicas 25g', 'Citrus Fruit 25g', 'Citrus Fruit 50g', 'Tofu 50g', 'Bovine Meat (beef herd) 25g', 'Wine 25g', 'Pig Meat 10g', 'Other Vegetables 10g']
 
-12['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 50g', 'Soymilk 100g', 'Rapeseed Oil 50g', 'Bananas 100g', 'Tomatoes 50g', 'Fish (farmed) 50g']
+12['Maize (Meal) 10g', 'Oatmeal 10g', 'Potatoes 100g', 'Cassava 25g', 'Cassava 50g', 'Beet Sugar 10g', 'Beet Sugar 25g', 'Other Pulses 25g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Palm Oil 10g', 'Olive Oil 10g', 'Bananas 25g', 'Brassicas 100g', 'Tofu 50g', 'Other Fruit 25g']
 
-13['Potatoes 100g', 'Beet Sugar 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Tomatoes 100g', 'Cheese 50g', 'Other Vegetables 100g', 'Crustaceans (farmed) 100g']
+13['Maize (Meal) 10g', 'Barley (Beer) 50g', 'Barley (Beer) 100g', 'Potatoes 25g', 'Cassava 25g', 'Cassava 50g', 'Cassava 100g', 'Beet Sugar 10g', 'Beet Sugar 25g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Palm Oil 10g', 'Olive Oil 10g', 'Bananas 25g', 'Apples 50g', 'Citrus Fruit 10g', 'Tofu 50g', 'Wine 25g', 'Other Fruit 10g']
 
-14['Potatoes 100g', 'Beet Sugar 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Bovine Meat (beef herd) 50g', 'Poultry Meat 100g', 'Tomatoes 50g']
+14['Maize (Meal) 10g', 'Barley (Beer) 10g', 'Oatmeal 10g', 'Cassava 25g', 'Cassava 50g', 'Cassava 100g', 'Beet Sugar 10g', 'Other Pulses 50g', 'Peas 10g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Palm Oil 10g', 'Bananas 25g', 'Brassicas 25g', 'Tofu 50g', 'Other Fruit 10g', 'Other Fruit 50g', 'Other Vegetables 25g']
 
-15['Maize (Meal) 50g', 'Potatoes 100g', 'Cassava 50g', 'Cassava 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Bovine Meat (beef herd) 100g', 'Wine 50g', 'Tomatoes 50g']
-
-16['Maize (Meal) 50g', 'Rice 50g', 'Potatoes 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Cheese 50g', 'Crustaceans (farmed) 50g']
-
-17['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Root Vegetables 100g', 'Cheese 100g']
-
-18['Potatoes 100g', 'Beet Sugar 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Apples 50g', 'Poultry Meat 100g', 'Tomatoes 50g', 'Cheese 50g']
-
-19['Maize (Meal) 50g', 'Barley (Beer) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Dark Chocolate 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Citrus Fruit 50g', 'Tomatoes 50g', 'Other Vegetables 50g']
-
-20['Barley (Beer) 50g', 'Potatoes 100g', 'Beet Sugar 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Poultry Meat 100g', 'Tomatoes 50g', 'Other Vegetables 100g']
-
-21['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Dark Chocolate 100g', 'Onions & Leeks 50g', 'Bananas 100g']
-
-22['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Citrus Fruit 50g', 'Tomatoes 50g', 'Cheese 100g']
-
-23['Maize (Meal) 50g', 'Oatmeal 100g', 'Potatoes 100g', 'Coffee 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tofu 100g', 'Tomatoes 50g']
-
-24['Wheat & Rye (Bread) 100g', 'Maize (Meal) 50g', 'Barley (Beer) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Poultry Meat 100g', 'Tomatoes 50g', 'Other Vegetables 100g']
-
-25['Maize (Meal) 50g', 'Potatoes 100g', 'Coffee 50g', 'Soybean Oil 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Citrus Fruit 50g', 'Tomatoes 50g']
-
-26['Barley (Beer) 50g', 'Potatoes 100g', 'Beet Sugar 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Eggs 50g', 'Tomatoes 50g', 'Lamb & Mutton 100g', 'Other Vegetables 50g']
-
-27['Maize (Meal) 50g', 'Potatoes 100g', 'Peas 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Brassicas 100g', 'Eggs 100g', 'Tomatoes 50g', 'Crustaceans (farmed) 50g']
-
-28['Potatoes 100g', 'Beet Sugar 100g', 'Soymilk 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tofu 50g', 'Tomatoes 50g', 'Lamb & Mutton 100g', 'Milk 100g']
-
-29['Maize (Meal) 50g', 'Potatoes 100g', 'Beet Sugar 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Eggs 50g', 'Lamb & Mutton 100g']
-
-30['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Dark Chocolate 50g', 'Onions & Leeks 50g', 'Onions & Leeks 100g', 'Bananas 100g', 'Wine 100g', 'Poultry Meat 50g', 'Tomatoes 50g']
-
-31['Maize (Meal) 50g', 'Potatoes 100g', 'Nuts 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Root Vegetables 100g']
-
-32['Wheat & Rye (Bread) 50g', 'Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Coffee 50g', 'Dark Chocolate 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Other Vegetables 50g']
-
-33['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Soybean Oil 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Apples 100g', 'Citrus Fruit 50g', 'Tomatoes 50g', 'Other Vegetables 50g']
-
-34['Maize (Meal) 50g', 'Potatoes 50g', 'Potatoes 100g', 'Beet Sugar 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Milk 50g', 'Cheese 50g']
-
-35['Maize (Meal) 50g', 'Soymilk 100g', 'Rapeseed Oil 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Root Vegetables 100g', 'Milk 50g']
-
-36['Maize (Meal) 50g', 'Potatoes 100g', 'Olive Oil 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Citrus Fruit 100g', 'Bovine Meat (beef herd) 50g', 'Tomatoes 50g']
-
-37['Maize (Meal) 50g', 'Rice 50g', 'Potatoes 100g', 'Soymilk 100g', 'Dark Chocolate 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Wine 50g', 'Other Fruit 100g', 'Tomatoes 50g']
-
-38['Maize (Meal) 50g', 'Oatmeal 100g', 'Potatoes 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tofu 100g', 'Tomatoes 50g', 'Other Vegetables 50g']
-
-39['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Dark Chocolate 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Wine 100g', 'Tomatoes 50g', 'Lamb & Mutton 50g', 'Other Vegetables 100g']
-
-40['Maize (Meal) 50g', 'Potatoes 100g', 'Other Pulses 50g', 'Groundnuts 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Citrus Fruit 50g', 'Tomatoes 50g', 'Milk 50g']
-
-41['Maize (Meal) 50g', 'Potatoes 100g', 'Beet Sugar 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Pig Meat 50g', 'Other Vegetables 50g', 'Fish (farmed) 50g']
-
-42['Maize (Meal) 50g', 'Potatoes 100g', 'Cane Sugar 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tofu 50g', 'Bovine Meat (beef herd) 100g', 'Tomatoes 50g']
-
-43['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Rapeseed Oil 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Crustaceans (farmed) 100g']
-
-44['Potatoes 100g', 'Beet Sugar 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Brassicas 100g', 'Poultry Meat 100g', 'Tomatoes 50g', 'Crustaceans (farmed) 50g', 'Crustaceans (farmed) 100g']
-
-45['Maize (Meal) 50g', 'Beet Sugar 50g', 'Groundnuts 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tofu 50g', 'Tomatoes 50g']
-
-46['Maize (Meal) 50g', 'Potatoes 100g', 'Cassava 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 50g', 'Bananas 100g', 'Tofu 50g', 'Eggs 100g', 'Tomatoes 50g']
-
-47['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Citrus Fruit 50g', 'Tofu 50g', 'Tomatoes 50g', 'Pig Meat 100g', 'Crustaceans (farmed) 100g']
-
-48['Maize (Meal) 50g', 'Oatmeal 100g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tofu 50g', 'Tomatoes 50g']
-
-49['Wheat & Rye (Bread) 50g', 'Maize (Meal) 50g', 'Potatoes 100g', 'Cassava 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Wine 50g', 'Tomatoes 50g', 'Cheese 50g']
-
-50['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Soybean Oil 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Root Vegetables 50g']
-
-51['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Soybean Oil 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Apples 50g', 'Tomatoes 50g', 'Other Vegetables 50g', 'Fish (farmed) 100g']
-
-52['Maize (Meal) 50g', 'Potatoes 100g', 'Groundnuts 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Brassicas 50g', 'Bovine Meat (beef herd) 50g', 'Wine 50g', 'Tomatoes 50g']
-
-53['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g', 'Pig Meat 100g', 'Milk 50g']
-
-54['Maize (Meal) 50g', 'Oatmeal 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Onions & Leeks 100g', 'Bananas 100g', 'Berries & Grapes 100g', 'Bovine Meat (beef herd) 100g', 'Tomatoes 50g']
-
-55['Wheat & Rye (Bread) 50g', 'Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Wine 50g', 'Poultry Meat 50g', 'Poultry Meat 100g', 'Tomatoes 50g']
-
-56['Maize (Meal) 50g', 'Cassava 50g', 'Nuts 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Bovine Meat (beef herd) 100g', 'Tomatoes 50g']
-
-57['Maize (Meal) 50g', 'Barley (Beer) 100g', 'Oatmeal 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Citrus Fruit 100g', 'Eggs 50g', 'Tomatoes 50g']
-
-58['Potatoes 100g', 'Beet Sugar 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Bovine Meat (beef herd) 50g', 'Poultry Meat 100g', 'Tomatoes 50g', 'Tomatoes 100g', 'Fish (farmed) 50g']
-
-59['Maize (Meal) 50g', 'Soymilk 100g', 'Olive Oil 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Berries & Grapes 100g', 'Tomatoes 50g', 'Tomatoes 100g']
-
-60['Maize (Meal) 50g', 'Rice 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Pig Meat 100g']
-
-61['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tofu 50g', 'Bovine Meat (beef herd) 50g', 'Tomatoes 50g', 'Pig Meat 100g', 'Milk 100g']
-
-62['Potatoes 100g', 'Beet Sugar 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tofu 50g', 'Other Fruit 100g', 'Eggs 50g', 'Tomatoes 50g', 'Lamb & Mutton 50g']
-
-63['Wheat & Rye (Bread) 50g', 'Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Coffee 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Citrus Fruit 100g', 'Eggs 100g', 'Tomatoes 50g']
-
-64['Wheat & Rye (Bread) 50g', 'Barley (Beer) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Sunflower Oil 50g', 'Onions & Leeks 50g', 'Bananas 100g', 'Tomatoes 50g']
-
-65['Potatoes 100g', 'Beet Sugar 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Citrus Fruit 50g', 'Tofu 50g', 'Bovine Meat (beef herd) 100g', 'Tomatoes 50g', 'Milk 50g']
-
-66['Maize (Meal) 50g', 'Barley (Beer) 100g', 'Potatoes 100g', 'Nuts 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Brassicas 100g', 'Bovine Meat (beef herd) 50g', 'Tomatoes 50g']
-
-67['Maize (Meal) 50g', 'Potatoes 100g', 'Cassava 100g', 'Groundnuts 50g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Bovine Meat (beef herd) 50g', 'Wine 50g', 'Tomatoes 50g']
-
-68['Wheat & Rye (Bread) 100g', 'Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Onions & Leeks 100g', 'Bananas 100g', 'Brassicas 100g', 'Poultry Meat 100g', 'Tomatoes 50g']
-
-69['Maize (Meal) 50g', 'Barley (Beer) 100g', 'Potatoes 100g', 'Soymilk 100g', 'Dark Chocolate 100g', 'Onions & Leeks 50g', 'Berries & Grapes 50g', 'Tomatoes 50g']
-
-70['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Other Fruit 100g', 'Poultry Meat 50g', 'Eggs 50g', 'Eggs 100g', 'Tomatoes 50g']
-
-71['Maize (Meal) 50g', 'Potatoes 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Berries & Grapes 50g', 'Berries & Grapes 100g', 'Tomatoes 50g', 'Cheese 100g']
-
-72['Maize (Meal) 50g', 'Potatoes 100g', 'Soymilk 100g', 'Onions & Leeks 50g', 'Bananas 100g', 'Other Fruit 50g', 'Poultry Meat 50g', 'Poultry Meat 100g', 'Tomatoes 50g', 'Pig Meat 50g']
+15['Oatmeal 10g', 'Rice 50g', 'Cassava 25g', 'Cassava 50g', 'Beet Sugar 10g', 'Beet Sugar 25g', 'Soymilk 10g', 'Soymilk 25g', 'Soymilk 50g', 'Soymilk 100g', 'Coffee 10g', 'Palm Oil 10g', 'Olive Oil 10g', 'Bananas 25g', 'Brassicas 50g', 'Wine 10g', 'Poultry Meat 10g', 'Milk 10g']
 
