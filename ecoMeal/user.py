@@ -1,12 +1,13 @@
 from ecoMeal.type.person import Person
+import re
 
 def user_information():
-    sex = input("Sexe (M/F) : ").strip().upper()
-    weight = float(input("Poids (kg) : "))
-    height = float(input("Taille (cm) : "))
-    age = int(input("Âge : "))
-    level_activity = input("Niveau d'activité (0 à 6) : ")
-    number_of_meals = int(input("Nombre de repas à générer ?"))
+    sex = get_input("Sexe (M/F) : ", "[MFmf]").upper()
+    weight = float(get_input("Poids (kg) : ", "[0-9]+"))
+    height = float(get_input("Taille (cm) : ", "[0-9]+"))
+    age = int(get_input("Âge : ", "[0-9]+"))
+    level_activity = get_input("Niveau d'activité (0 à 6) : ", "[0-6]")
+    number_of_meals = int(get_input("Nombre de repas à générer ? ", "[1-9][0-9]*"))
     return Person(sex, weight, height, age, level_activity), number_of_meals
 
 def get_user_needs(user: Person):
@@ -16,3 +17,13 @@ def get_user_needs(user: Person):
     print(f"Protéines : {needs[0]:.1f} g | Lipides : {needs[1]:.1f} g | Glucides : {needs[2]:.1f} g\n")
     
     return needs
+
+def get_input(displayed_text, format):
+    user_input = input(displayed_text)
+    if re.search("^" + format + "$", user_input) != None:
+        # le format est bon
+        return user_input
+    else:
+        # le format est pas bon
+        print("La valeur saisie est invalide.")
+        return get_input(displayed_text, format)
