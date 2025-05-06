@@ -2,10 +2,10 @@ conversion_table = {"kg": 0.001, "hg": 0.01, "dag": 0.1, "g": 1, "dg": 10, "cg":
                     "kl": 0.000001, "hl": 0.00001, "dal": 0.0001, "l": 0.001, "dl": 0.01, "cl": 0.1, "ml": 1, "µl": 1000}
 
 class Ingredient:
-    def __init__(self, name, type, kcal, protein, fat, carb, retail_unit, ecoscore=None):
+    def __init__(self, name, type, kcal, protein, fat, carb, retail_unit, environmental_impact={}):
         self.name = name
         self.type = type
-        
+
         conversion_rate = 1
         if retail_unit.lower() in conversion_table:
             conversion_rate = conversion_table[retail_unit.lower()]
@@ -21,5 +21,5 @@ class Ingredient:
             self.retail_unit = 'g'
         else:
             self.retail_unit = retail_unit
-        self.ecoscore = ecoscore
 
+        self.environmental_impact = environmental_impact
