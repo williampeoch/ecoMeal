@@ -32,9 +32,5 @@ def main():
 
     print("Fichier Excel généré avec succès !")
 
-
-
-
-
 if __name__ == "__main__":
     main()
