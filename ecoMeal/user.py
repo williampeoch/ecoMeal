@@ -8,7 +8,8 @@ def user_information():
     age = int(get_input("Âge : ", "[0-9]+"))
     level_activity = get_input("Niveau d'activité (0 à 6) : ", "[0-6]")
     number_of_meals = int(get_input("Nombre de repas à générer ? ", "[1-9][0-9]*"))
-    return Person(sex, weight, height, age, level_activity), number_of_meals
+    ecoscore_importance = get_ecoscore_importance()
+    return Person(sex, weight, height, age, level_activity), number_of_meals, ecoscore_importance
 
 def get_user_needs(user: Person):
     needs = user.get_nutritional_needs_per_meal()  # [protéines, lipides, glucides, kcal]
@@ -27,3 +28,14 @@ def get_input(displayed_text, format):
         # le format est pas bon
         print("La valeur saisie est invalide.")
         return get_input(displayed_text, format)
+
+def get_ecoscore_importance():
+    while True:
+        try:
+            value = int(input("Sur une échelle de 1 (pas important) à 100 (très important), à quel point souhaitez-vous que vos repas respectent l'environnement ? "))
+            if 1 <= value <= 100:
+                return value
+            else:
+                print("Veuillez entrer un nombre entre 1 et 100.")
+        except ValueError:
+            print("Entrée invalide. Veuillez entrer un nombre.")

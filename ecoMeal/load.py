@@ -4,7 +4,11 @@ import pandas as pd
 
 def load_data()->IngredientData:
     # 1. Lire le fichier Excel
-    df = pd.read_excel("data\\nutritional_data.xlsx")
+    df = pd.read_excel("data/nutritional_data.xlsx")
+    eco_df = pd.read_excel("data/eco_scores.xlsx")
+    
+    # Fusionner sur la colonne 'Product'
+    df = df.merge(eco_df[["Product", "Score"]], on="Product", how="left")
     data = df.to_dict(orient='records')
 
     list_ingredient=[]
@@ -17,8 +21,9 @@ def load_data()->IngredientData:
             element["Protein"],
             element["Fat"],
             element["Carb"],
-            element["RetailUnit"]         
-            )
+            element["RetailUnit"],
+            element.get("Score", None)  # Ajout de l'ecoscore
+        )
         list_ingredient.append(ingredient)
 
     print(f"Chargé {len(list_ingredient)} ingrédients")
