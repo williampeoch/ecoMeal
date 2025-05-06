@@ -13,10 +13,10 @@ def user_information():
 
 def get_user_needs(user: Person):
     needs = user.get_nutritional_needs_per_meal()  # [protéines, lipides, glucides, kcal]
-    
+
     print(f"\nBesoins pour ce repas : {needs[3]:.0f} kcal")
     print(f"Protéines : {needs[0]:.1f} g | Lipides : {needs[1]:.1f} g | Glucides : {needs[2]:.1f} g\n")
-    
+
     return needs
 
 def get_input(displayed_text, format):
@@ -30,12 +30,4 @@ def get_input(displayed_text, format):
         return get_input(displayed_text, format)
 
 def get_ecoscore_importance():
-    while True:
-        try:
-            value = int(input("Sur une échelle de 1 (pas important) à 100 (très important), à quel point souhaitez-vous que vos repas respectent l'environnement ? "))
-            if 1 <= value <= 100:
-                return value
-            else:
-                print("Veuillez entrer un nombre entre 1 et 100.")
-        except ValueError:
-            print("Entrée invalide. Veuillez entrer un nombre.")
+    return int(get_input("Sur une échelle de 1 (pas important) à 100 (très important), à quel point souhaitez-vous que vos repas respectent l'environnement ? ","([1-9][0-9]?|(100))"))
