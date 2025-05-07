@@ -1,12 +1,14 @@
+import pandas as pd
+import numpy as np
+
 from ecoMeal.simplexe import calculate_meal_optim
 from ecoMeal.user import user_information
 from ecoMeal.user import get_user_needs
 from ecoMeal.output_menu import generate_output
 from ecoMeal.load import load_data
-import pandas as pd
-import numpy as np
 
 def main():
+
     ingredients_data = load_data()
 
     print("\033[0;32mBienvenue dans ecoMeal, le générateur de repas personnalisés !\033[0m")
@@ -15,6 +17,7 @@ def main():
     needs = get_user_needs(user)
 
     dataframe_list=[]
+
     for i in range(number_of_meals):
         meal = ingredients_data.generate_meal()
         ecoscore_vector = np.array([ingredient.ecoscore for ingredient in meal.ingredients])

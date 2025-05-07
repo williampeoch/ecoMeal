@@ -1,10 +1,11 @@
 import pandas as pd
 import numpy as np
+
 from scipy.optimize import minimize
 
 def calculate_meal(A, nutritional_targets, ecoscore_vector, ecoscore_importance, lambda_=1.0):
 
-    # 4. Objectif nutritionnel pour un repas
+    # Objectif nutritionnel pour un repas
     b = np.array([
     nutritional_targets[3],  # kcal
     nutritional_targets[0],  # protéines
@@ -24,7 +25,7 @@ def calculate_meal(A, nutritional_targets, ecoscore_vector, ecoscore_importance,
     A_aug = np.vstack([A, lambda_ * ecoscore_importance * ecoscore_vector])
     b_aug = np.append(b, [0])  # On veut minimiser l'écoscore total, donc cible = 0
 
-    #5. Résolution du système (moindres carrés)    
+    #5. Résolution du système (moindres carrés)
     x = np.linalg.lstsq(A_aug, b_aug, rcond=None)[0]
 
     x = np.maximum(x, 0)  # Quantités positives
@@ -32,7 +33,9 @@ def calculate_meal(A, nutritional_targets, ecoscore_vector, ecoscore_importance,
     return x
 
 def calculate_meal_optim(A, nutritional_targets, ecoscore_vector, ecoscore_importance):
+
     n = A.shape[1]
+
     def objective(x):
         return 10 * ecoscore_importance * np.dot(ecoscore_vector, x)
     # S'assurer que chaque ligne de A est un vecteur 1D
@@ -58,5 +61,3 @@ def calculate_meal_optim(A, nutritional_targets, ecoscore_vector, ecoscore_impor
     else:
         print('Optimisation échouée:', result.message)
         return np.zeros(n)
-
-    

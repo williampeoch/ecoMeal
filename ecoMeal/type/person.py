@@ -1,4 +1,5 @@
 class Person:
+
     def __init__(self, sex, weight, height, age, level_activity):
         self.sex = sex
         self.weight = weight  # en kg

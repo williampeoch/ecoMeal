@@ -1,0 +1,59 @@
+{
+    "nutritional_data":
+    {
+        "file_path": "data/nutritional_data.xlsx",
+        "sheet_name": "datas",
+        "header": 0
+    },
+    "ecological_data":
+    {
+        "file_path": "data/ecological_data.xlsx",
+        "sheet_name": "Results - Retail Weight",
+        "header": 1,
+        "ingredient_column":
+        {
+            "column_name": "Product",
+            "column_index": "A"
+        },
+        "value_column": "Mean",
+        "indicateur":
+        [
+            {
+                "ID":"land_use",
+                "column_name":"Land Use (m2/FU)",
+                "column_index":"D",
+                "ponderation":1
+            },
+            {
+                "ID":"ghg_emissions",
+                "column_name":"GHG Emissions (kg CO2eq/FU, IPCC 2013 incl. CC feedbacks)",
+                "column_index":"J",
+                "ponderation":1
+            },
+            {
+                "ID":"acidifying_emissions",
+                "column_name":"Acidifying Emissions (g SO2eq/FU, CML2 Baseline)",
+                "column_index":"P",
+                "ponderation":1
+            },
+            {
+                "ID":"eutrophying_emissions",
+                "column_name":"Eutrophying Emissions (g PO43-eq/FU, CML2 Baseline)",
+                "column_index":"V",
+                "ponderation":1
+            },
+            {
+                "ID":"freshwater_withdrawals",
+                "column_name":"Freshwater Withdrawals (L/FU)",
+                "column_index":"AC",
+                "ponderation":1
+            },
+            {
+                "ID":"stress_weighted_water_use",
+                "column_name":"Stress-Weighted Water Use (L/FU)",
+                "column_index":"AI",
+                "ponderation":1
+            }
+        ]
+    }
+}

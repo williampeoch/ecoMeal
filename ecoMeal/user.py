@@ -1,7 +1,9 @@
-from ecoMeal.type.person import Person
 import re
 
+from ecoMeal.type.person import Person
+
 def user_information():
+
     sex = get_input("Sexe (M/F) : ", "[MFmf]").upper()
     weight = float(get_input("Poids (kg) : ", "[0-9]+"))
     height = float(get_input("Taille (cm) : ", "[0-9]+"))
@@ -9,9 +11,11 @@ def user_information():
     level_activity = get_input("Niveau d'activité (0 à 6) : ", "[0-6]")
     number_of_meals = int(get_input("Nombre de repas à générer ? ", "[1-9][0-9]*"))
     ecoscore_importance = get_ecoscore_importance()
+
     return Person(sex, weight, height, age, level_activity), number_of_meals, ecoscore_importance
 
 def get_user_needs(user: Person):
+
     needs = user.get_nutritional_needs_per_meal()  # [protéines, lipides, glucides, kcal]
 
     print(f"\nBesoins pour ce repas : {needs[3]:.0f} kcal")
@@ -20,7 +24,9 @@ def get_user_needs(user: Person):
     return needs
 
 def get_input(displayed_text, format):
+
     user_input = input(displayed_text)
+
     if re.search("^" + format + "$", user_input) != None:
         # le format est bon
         return user_input
