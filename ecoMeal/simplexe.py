@@ -32,32 +32,32 @@ def calculate_meal(A, nutritional_targets, ecoscore_vector, ecoscore_importance,
 
     return x
 
-def calculate_meal_optim(A, nutritional_targets, ecoscore_vector, ecoscore_importance):
-
-    n = A.shape[1]
-
-    def objective(x):
-        return 10 * ecoscore_importance * np.dot(ecoscore_vector, x)
-    # S'assurer que chaque ligne de A est un vecteur 1D
-    kcal_vec = np.array(A[0]).flatten()
-    prot_vec = np.array(A[1]).flatten()
-    fat_vec = np.array(A[2]).flatten()
-    carb_vec = np.array(A[3]).flatten()
-    constraints = [
-        {'type': 'ineq', 'fun': lambda x: np.dot(kcal_vec, x) - nutritional_targets[3] * 0.8},
-        {'type': 'ineq', 'fun': lambda x: nutritional_targets[3] * 1.2 - np.dot(kcal_vec, x)},
-        {'type': 'ineq', 'fun': lambda x: np.dot(prot_vec, x) - nutritional_targets[0] * 0.8},
-        {'type': 'ineq', 'fun': lambda x: nutritional_targets[0] * 1.2 - np.dot(prot_vec, x)},
-        {'type': 'ineq', 'fun': lambda x: np.dot(fat_vec, x) - nutritional_targets[1] * 0.8},
-        {'type': 'ineq', 'fun': lambda x: nutritional_targets[1] * 1.2 - np.dot(fat_vec, x)},
-        {'type': 'ineq', 'fun': lambda x: np.dot(carb_vec, x) - nutritional_targets[2] * 0.8},
-        {'type': 'ineq', 'fun': lambda x: nutritional_targets[2] * 1.2 - np.dot(carb_vec, x)},
-    ]
-    bounds = [(0, None)] * n
-    x0 = np.ones(n)
-    result = minimize(objective, x0, bounds=bounds, constraints=constraints)
-    if result.success:
-        return result.x
-    else:
-        print('Optimisation échouée:', result.message)
-        return np.zeros(n)
+# def calculate_meal_optim(A, nutritional_targets, ecoscore_vector, ecoscore_importance):
+#
+#     n = A.shape[1]
+#
+#     def objective(x):
+#         return 10 * ecoscore_importance * np.dot(ecoscore_vector, x)
+#     # S'assurer que chaque ligne de A est un vecteur 1D
+#     kcal_vec = np.array(A[0]).flatten()
+#     prot_vec = np.array(A[1]).flatten()
+#     fat_vec = np.array(A[2]).flatten()
+#     carb_vec = np.array(A[3]).flatten()
+#     constraints = [
+#         {'type': 'ineq', 'fun': lambda x: np.dot(kcal_vec, x) - nutritional_targets[3] * 0.8},
+#         {'type': 'ineq', 'fun': lambda x: nutritional_targets[3] * 1.2 - np.dot(kcal_vec, x)},
+#         {'type': 'ineq', 'fun': lambda x: np.dot(prot_vec, x) - nutritional_targets[0] * 0.8},
+#         {'type': 'ineq', 'fun': lambda x: nutritional_targets[0] * 1.2 - np.dot(prot_vec, x)},
+#         {'type': 'ineq', 'fun': lambda x: np.dot(fat_vec, x) - nutritional_targets[1] * 0.8},
+#         {'type': 'ineq', 'fun': lambda x: nutritional_targets[1] * 1.2 - np.dot(fat_vec, x)},
+#         {'type': 'ineq', 'fun': lambda x: np.dot(carb_vec, x) - nutritional_targets[2] * 0.8},
+#         {'type': 'ineq', 'fun': lambda x: nutritional_targets[2] * 1.2 - np.dot(carb_vec, x)},
+#     ]
+#     bounds = [(0, None)] * n
+#     x0 = np.ones(n)
+#     result = minimize(objective, x0, bounds=bounds, constraints=constraints)
+#     if result.success:
+#         return result.x
+#     else:
+#         print('Optimisation échouée:', result.message)
+#         return np.zeros(n)

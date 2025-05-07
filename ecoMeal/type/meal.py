@@ -1,10 +1,8 @@
-import numpy 
+import numpy
 
 class Meal:
     def __init__(self, ingredients):
         self.ingredients=ingredients
-
-
 
     def get_matrix(self):
         # self.ingredients = liste d'ingrédients pour le repas courant
@@ -27,11 +25,10 @@ class Meal:
             line_protein.append(ingredient.protein)
             line_fat.append(ingredient.fat)
             line_carb.append(ingredient.carb)
-        
+
         line_list.append(line_kcal)
         line_list.append(line_protein)
         line_list.append(line_fat)
         line_list.append(line_carb)
-        
-        return numpy.matrix(line_list)
 
+        return numpy.matrix(line_list)

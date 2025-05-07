@@ -26,10 +26,10 @@ class Ingredient:
 
     def get_protein(self):
         return self.protein
-    
+
     def get_kcal(self):
         return self.kcal
-    
+
     def get_environmental_data(self, key):
         return self.environmental_impact[key]
 
@@ -38,3 +38,9 @@ class Ingredient:
         for element in self.environmental_impact:
             desc = desc + str(self.environmental_impact[element]) + " " + element + " | "
         return desc
+
+    def __getattr__(self, name):
+        """Permet l'accès direct aux clés de environmental_impact comme attributs."""
+        if name in self.environmental_impact:
+            return self.environmental_impact[name]
+        raise AttributeError(f"'Ingredient' object has no attribute '{name}'")

@@ -11,3 +11,14 @@ def convert_column_name_to_index(column_name):
         column_index += real_char_value
 
     return column_index - 1 # excel est indexé à 1, column_index est indexé à 0
+
+def get_input(displayed_text, format):
+    user_input = input(displayed_text)
+
+    if re.search("^" + format + "$", user_input) != None:
+        # le format est bon
+        return user_input
+    else:
+        # le format n'est pas bon
+        print("La valeur saisie est invalide.")
+        return get_input(displayed_text, format)

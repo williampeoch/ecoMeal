@@ -44,7 +44,8 @@ def load_data()->IngredientData:
 
     # Fusionner sur la colonne 'Product'
     nutri_df = nutri_df.merge(subset_eco_df, left_on=["Product"], right_on=[ingredient_column_name], how="left")
-    print(nutri_df)
+    # print(nutri_df)
+
     data = nutri_df.to_dict(orient='records')
 
     list_ingredient=[]
@@ -63,7 +64,6 @@ def load_data()->IngredientData:
             impact
         )
         dictionary_ingredients[element["Product"]] = ingredient
-        
         list_ingredient.append(ingredient)
 
     print(f"Chargé {len(list_ingredient)} ingrédients")
