@@ -23,3 +23,18 @@ class Ingredient:
             self.retail_unit = retail_unit
 
         self.environmental_impact = environmental_impact
+
+    def get_protein(self):
+        return self.protein
+    
+    def get_kcal(self):
+        return self.kcal
+    
+    def get_environmental_data(self, key):
+        return self.environmental_impact[key]
+
+    def __str__(self):
+        desc = self.name + " (type: " + self.type + ") ||| Nutritional data per 1" + self.retail_unit + ": " + str(self.kcal) + " Kcal | " + str(self.protein) + " Prot. | " + str(self.fat) + " Fat | " + str(self.carb) + " Carb ||| Environmental data: "
+        for element in self.environmental_impact:
+            desc = desc + str(self.environmental_impact[element]) + " " + element + " | "
+        return desc

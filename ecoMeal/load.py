@@ -48,6 +48,7 @@ def load_data()->IngredientData:
     data = nutri_df.to_dict(orient='records')
 
     list_ingredient=[]
+    dictionary_ingredients = {}
 
     for element in data:
         impact = {indicateur["ID"]: element.get(list_col_names[convert_column_name_to_index(indicateur["column_index"])], None) for indicateur in config["ecological_data"]["indicateur"]}
@@ -61,6 +62,8 @@ def load_data()->IngredientData:
             element["RetailUnit"],
             impact
         )
+        dictionary_ingredients[element["Product"]] = ingredient
+        
         list_ingredient.append(ingredient)
 
     print(f"Chargé {len(list_ingredient)} ingrédients")
@@ -72,4 +75,4 @@ def load_data()->IngredientData:
         temp_list.append(element)
         ingredient_by_type[element.type]=temp_list
 
-    return IngredientData(ingredient_by_type)
+    return IngredientData(dictionary_ingredients, ingredient_by_type)
