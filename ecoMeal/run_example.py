@@ -43,7 +43,7 @@ meal_beef = Meal(meal_ingredients_beef)
 quantity_beef = calculate_meal_quantities_for_user_needs(meal_beef.get_matrix(), needs)[0]
 beef = data.get_ingredient_details("Bovine Meat (beef herd)")
 beef_emissions = beef.ghg_emissions * quantity_beef
-
+print(quantity_beef)
 # -------------
 meal_ingredients_salmon = []
 
@@ -58,12 +58,12 @@ quantities_salmon= calculate_meal_quantities_for_user_needs(meal_salmon.get_matr
 fish = data.get_ingredient_details("Fish (farmed)")
 
 # Affichage des valeurs d’émissions de GES
-fish_emission = fish.ghg_emissions # ou tout autre indicateur défini dans config.json
-beef_emission = beef.ghg_emissions
+# fish_emission = fish.ghg_emissions # ou tout autre indicateur défini dans config.json
+# beef_emission = beef.ghg_emissions
 
-print(f"GHG emissions - Fish (farmed): {fish_emission:.2f} kg CO2eq")
-print(f"GHG emissions - Bovine Meat: {beef_emission:.2f} kg CO2eq")
+# print(f"GHG emissions - Fish (farmed): {fish_emission:.2f} kg CO2eq")
+print(f"GHG emissions - Bovine Meat: {beef_emissions:.2f} kg CO2eq")
 
 # Calcul du pourcentage de réduction
-reduction = (beef_emission - fish_emission) / beef_emission * 100
-print(f"\nSalmon option reduces GHG emissions by {reduction:.2f}% compared to beef.")
+# reduction = (beef_emission - fish_emission) / beef_emissions * 100
+# print(f"\nSalmon option reduces GHG emissions by {reduction:.2f}% compared to beef.")
