@@ -20,8 +20,6 @@ def main():
 
     print("Génération des repas en cours ...")
 
-
-
     valid_meals = get_valid_meals(ingredients_data, needs, ecoscore_importance)
     dataframe_list=[]
 
@@ -30,7 +28,6 @@ def main():
         print("Le nombre de repas souhaité dépasse le nombre de repas valides")
     else :
         chosen_meal = random.sample(valid_meals, number_of_meals)
-
 
     for i, meal in enumerate(chosen_meal):
 
