@@ -2,7 +2,7 @@ conversion_table = {"kg": 0.001, "hg": 0.01, "dag": 0.1, "g": 1, "dg": 10, "cg":
                     "kl": 0.000001, "hl": 0.00001, "dal": 0.0001, "l": 0.001, "dl": 0.01, "cl": 0.1, "ml": 1, "µl": 1000}
 
 class Ingredient:
-    def __init__(self, name, type, kcal, protein, fat, carb, retail_unit, environmental_impact={}):
+    def __init__(self, name, type, kcal, protein, fat, carb, retail_unit, environmental_impact, ecoscore):
         self.name = name
         self.type = type
 
@@ -23,6 +23,7 @@ class Ingredient:
             self.retail_unit = retail_unit
 
         self.environmental_impact = environmental_impact
+        self.ecoscore = ecoscore
 
     def get_protein(self):
         return self.protein

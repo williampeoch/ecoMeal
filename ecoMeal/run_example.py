@@ -1,5 +1,6 @@
 from ecoMeal.load import load_data
 from ecoMeal.user import get_user_needs
+# nb pour une échelle de 1 à 100, regex : "([1-9][0-9]?|(100))"
 
 # "Algorithmics and computer programming" + Sustainability - Final exam - April 2023
 

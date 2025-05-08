@@ -1,3 +1,5 @@
+import re
+
 def convert_column_name_to_index(column_name):
 
     column_name = column_name.upper()

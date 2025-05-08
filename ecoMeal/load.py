@@ -14,16 +14,16 @@ def load_data()->IngredientData:
     # Chargement des données
     nutri_config = config["nutritional_data"]
     nutri_df = pd.read_excel(
-    nutri_config["file_path"],
-    sheet_name=nutri_config["sheet_name"],
-    header=nutri_config["header"]
+        nutri_config["file_path"],
+        sheet_name=nutri_config["sheet_name"],
+        header=nutri_config["header"]
     )
 
     eco_config = config["ecological_data"]
     eco_df = pd.read_excel(
-    eco_config["file_path"],
-    sheet_name=eco_config["sheet_name"],
-    header=eco_config["header"]
+        eco_config["file_path"],
+        sheet_name=eco_config["sheet_name"],
+        header=eco_config["header"]
     )
 
     # Créer la liste des colonnes à importer depuis eco_df
@@ -52,7 +52,9 @@ def load_data()->IngredientData:
     dictionary_ingredients = {}
 
     for element in data:
-        impact = {indicateur["ID"]: element.get(list_col_names[convert_column_name_to_index(indicateur["column_index"])], None) for indicateur in config["ecological_data"]["indicateur"]}
+        # ponderation de chacun des indicateurs de l'ingrédient , définissant leur poids dans l'écoscore final de l'ingrédient
+        impact = {indicateur["ID"]: indicateur["ponderation"]*element.get(list_col_names[convert_column_name_to_index(indicateur["column_index"])], None) for indicateur in config["ecological_data"]["indicateur"]}
+        ecoscore_ingredient = sum(impact.values())
         ingredient = Ingredient(
             element["Product"],
             element["Type"],
@@ -61,7 +63,8 @@ def load_data()->IngredientData:
             element["Fat"],
             element["Carb"],
             element["RetailUnit"],
-            impact
+            impact,
+            ecoscore_ingredient
         )
         dictionary_ingredients[element["Product"]] = ingredient
         list_ingredient.append(ingredient)

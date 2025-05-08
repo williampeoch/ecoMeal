@@ -3,6 +3,9 @@ import numpy
 class Meal:
     def __init__(self, ingredients):
         self.ingredients=ingredients
+        self.ecoscore=-1 # valeur impossible par défaut
+        self.ecoscore_letter = "?"
+        self.quantities = []
 
     def get_matrix(self):
         # self.ingredients = liste d'ingrédients pour le repas courant
