@@ -1,7 +1,8 @@
 from ecoMeal.load import load_data
 from ecoMeal.user import get_user_needs
 from ecoMeal.type.person import Person
-
+from ecoMeal.type.meal import Meal
+from ecoMeal.simplexe import calculate_meal_quantities_for_user_needs
 # nb pour une échelle de 1 à 100, regex : "([1-9][0-9]?|(100))"
 
 # "Algorithmics and computer programming" + Sustainability - Final exam - April 2023
@@ -24,7 +25,7 @@ from ecoMeal.type.person import Person
 ingredient_names_salmon_menu = ["Fish (farmed)", "Tomatoes", "Olive Oil", "Beet Sugar"]
 ingredient_names_beef_menu = ["Bovine Meat (beef herd)", "Tomatoes", "Olive Oil", "Beet Sugar"]
 
-personne_type = Person("F", 55, 170, 23, 2)
+personne_type = Person("F", 55, 170, 23, "2")
 needs = personne_type.get_nutritional_needs_per_meal()
 
 # 1.1 Using data from Poore and Nemecek (Science, 2018) and the program you built during the labs,
